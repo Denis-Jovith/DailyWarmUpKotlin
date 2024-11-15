@@ -1,4 +1,4 @@
-class SmartDevice(val name:String,val category: String) {
+open class SmartDevice(val name:String,val category: String) {
     var deviceStatus = "0"
 
     constructor(name:String,category: String,statusCode:String) : this(name,category) {
@@ -24,6 +24,21 @@ class SmartDevice(val name:String,val category: String) {
 
 }
 
+class SmartTvDevice(deviceName:String,deviceCategory:String):
+        SmartDevice(name= deviceName, category = deviceCategory){
+            var channelNumber = 1
+                set(value) {
+                    if(value in 0..200){
+                        field = value
+                    }
+                }
+    fun increasedSpeakerVolume(){
+        speakerVolume++
+        println("Speaker volume increased to $speakerVolume.")
+    }
+
+        }
+
 fun main(){
     val smartTvDevice = SmartDevice("Samsung Elite G","Flat Screen","1")
     println("Device name is: ${smartTvDevice.name}")
@@ -31,4 +46,7 @@ fun main(){
 
     smartTvDevice.turnOn()
     smartTvDevice.turnOff()
+
+    val smartTvDeviceOg = SmartTvDevice("FAFE","FEFA")
+    smartTvDeviceOg.increasedSpeakerVolume()
 }
