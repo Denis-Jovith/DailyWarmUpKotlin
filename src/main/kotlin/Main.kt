@@ -71,4 +71,8 @@ fun main() {
     val smartTvDeviceOg = SmartTvDevice("FAFE", "FEFA")
     smartTvDeviceOg.increasedSpeakerVolume()
     smartTvDeviceOg.nextChannel()
+
+    var smartLightBulb = SmartLightDevice("Bulb","Colored Bulb")
+    smartLightBulb.brightnessLevel
+    smartLightBulb.increaseBrightness()
 }
