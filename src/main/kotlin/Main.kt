@@ -1,6 +1,5 @@
-class SmartDevice {
-    val name = "Android TV"
-    val category = "Entertainment"
+class SmartDevice(val name:String,val category: String) {
+
     val deviceStatus = "online"
     var speakerVolume = 2
         get() = field
@@ -17,7 +16,7 @@ class SmartDevice {
 }
 
 fun main(){
-    val smartTvDevice = SmartDevice()
+    val smartTvDevice = SmartDevice("Samsung Elite G","Flat Screen")
     println("Device name is: ${smartTvDevice.name}")
     smartTvDevice.turnOn()
     smartTvDevice.turnOff()
