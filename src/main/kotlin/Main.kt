@@ -1,5 +1,6 @@
 open class SmartDevice(val name: String, val category: String) {
-    var deviceStatus = "0"
+    var deviceStatus = "online"
+    open val deviceType = "unknown"
 
     constructor(name: String, category: String, statusCode: String) : this(name, category) {
         deviceStatus = when (statusCode) {
@@ -28,6 +29,8 @@ open class SmartDevice(val name: String, val category: String) {
 
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
+
+    override val deviceType = "Smart TV"
     var channelNumber = 1
         set(value) {
             if (value in 0..200) {
@@ -48,8 +51,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     override fun turnOn() {
         super.turnOn()
         println(
-            "$name is turned on.Speaker volume is set to $speakerVolume and channel is " +
-                    "set to $channelNumber"
+            "$name is turned on.Speaker volume is set to $speakerVolume and channel is " + "set to $channelNumber"
         )
     }
 
@@ -61,6 +63,8 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
 
 class SmartLightDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceName) {
+
+    override val deviceType = "Smart Light"
     var brightnessLevel = 0
         set(value) {
             if (value in 0..100) {
@@ -87,8 +91,7 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
 }
 
 class SmartHome(
-    val smartTvDevice: SmartTvDevice,
-    val smartLightDevice: SmartLightDevice
+    val smartTvDevice: SmartTvDevice, val smartLightDevice: SmartLightDevice
 ) {
     fun turnOnTv() {
         smartTvDevice.turnOn()
@@ -143,6 +146,6 @@ fun main() {
     val smartHome = SmartHome(SmartTvDevice("Samsung Elite G", "Flat Screen"), SmartLightDevice("Bulb", "Colored Bulb"))
 
     smartHome.turnOffAllDevices()
-
+    smartTvDevice.deviceType
 
 }
