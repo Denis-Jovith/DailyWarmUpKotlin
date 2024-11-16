@@ -46,19 +46,52 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     }
 }
 
-class SmartLightDevice(deviceName:String,deviceCategory: String):
-        SmartDevice(name = deviceName, category = deviceName){
-            var brightnessLevel = 0
-                set(value) {
-                    if(value in 0..100){
-                        field = value
-                    }
-                }
-    fun increaseBrightness(){
+class SmartLightDevice(deviceName: String, deviceCategory: String) :
+    SmartDevice(name = deviceName, category = deviceName) {
+    var brightnessLevel = 0
+        set(value) {
+            if (value in 0..100) {
+                field = value
+            }
+        }
+
+    fun increaseBrightness() {
         brightnessLevel++
         println("Brightness increased to $brightnessLevel.")
     }
-        }
+}
+
+class SmartHome(
+    val smartTvDevice: SmartTvDevice,
+    val smartLightDevice: SmartLightDevice
+){
+    fun turnOnTv(){
+        smartTvDevice.turnOn()
+    }
+    fun turnOffTv(){
+        smartTvDevice.turnOff()
+    }
+    fun increaseTvVolume(){
+        smartTvDevice.increasedSpeakerVolume()
+    }
+    fun changeTvChannelToNext(){
+        smartTvDevice.nextChannel()
+    }
+    fun turnOnLight(){
+        smartLightDevice.turnOn()
+    }
+    fun turnOff(){
+        smartLightDevice.turnOff()
+    }
+    fun increaseLightBrightness(){
+        smartLightDevice.increaseBrightness()
+    }
+
+    fun turnOffAllDevices(){
+        turnOffTv()
+        turnOff()
+    }
+}
 
 fun main() {
     val smartTvDevice = SmartDevice("Samsung Elite G", "Flat Screen", "1")
@@ -72,7 +105,11 @@ fun main() {
     smartTvDeviceOg.increasedSpeakerVolume()
     smartTvDeviceOg.nextChannel()
 
-    var smartLightBulb = SmartLightDevice("Bulb","Colored Bulb")
+    var smartLightBulb = SmartLightDevice("Bulb", "Colored Bulb")
     smartLightBulb.brightnessLevel
     smartLightBulb.increaseBrightness()
+
+    val smartHome = SmartHome(SmartTvDevice("Samsung Elite G", "Flat Screen"), SmartLightDevice("Bulb", "Colored Bulb"))
+
+    smartHome.turnOffAllDevices()
 }
