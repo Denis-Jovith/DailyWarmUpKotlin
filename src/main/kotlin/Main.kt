@@ -11,6 +11,11 @@ open class SmartDevice(val name: String, val category: String) {
 
     }
 
+    var deviceStatusi="online"
+        protected set(value) {
+            field = value
+        }
+
     var speakerVolume = 2
         get() = field
         set(value) {
@@ -91,13 +96,21 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
 }
 
 class SmartHome(
-    val smartTvDevice: SmartTvDevice, val smartLightDevice: SmartLightDevice
+    val smartTvDevice: SmartTvDevice,
+    val smartLightDevice: SmartLightDevice
 ) {
+    var deviceTurnOnCOunt = 0
+        private set(value) {
+            field = value
+        }
+
     fun turnOnTv() {
+        deviceTurnOnCOunt++
         smartTvDevice.turnOn()
     }
 
     fun turnOffTv() {
+        deviceTurnOnCOunt--
         smartTvDevice.turnOff()
     }
 
@@ -110,10 +123,12 @@ class SmartHome(
     }
 
     fun turnOnLight() {
+        deviceTurnOnCOunt++
         smartLightDevice.turnOn()
     }
 
     fun turnOff() {
+        deviceTurnOnCOunt--
         smartLightDevice.turnOff()
     }
 
@@ -147,5 +162,7 @@ fun main() {
 
     smartHome.turnOffAllDevices()
     smartTvDevice.deviceType
+    val result =smartHome.deviceTurnOnCOunt
+    println(result)
 
 }
