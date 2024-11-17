@@ -36,7 +36,10 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
     override val deviceType = "Smart TV"
-    var channelNumber = 1
+
+
+
+    private var channelNumber = 1
         set(value) {
             if (value in 0..200) {
                 field = value
@@ -48,7 +51,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
         println("Speaker volume increased to $speakerVolume.")
     }
 
-    protected fun nextChannel() {
+     fun nextChannel() {
         channelNumber++
         println("Channel number increased to $channelNumber")
     }
@@ -119,7 +122,7 @@ class SmartHome(
     }
 
     fun changeTvChannelToNext() {
-        smartTvDevice.nextChannel()
+         smartTvDevice.nextChannel()
     }
 
     fun turnOnLight() {
@@ -164,5 +167,6 @@ fun main() {
     smartTvDevice.deviceType
     val result =smartHome.deviceTurnOnCOunt
     println(result)
+    smartHome.changeTvChannelToNext()
 
 }
