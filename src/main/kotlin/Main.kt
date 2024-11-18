@@ -3,6 +3,9 @@ open class SmartDevice(val name: String, val category: String) {
     var deviceStatus = "online"
     open val deviceType = "unknown"
 
+    //Constructor for class SmartDevice
+
+
     constructor(name: String, category: String, statusCode: String) : this(name, category) {
         deviceStatus = when (statusCode) {
             "0" -> "Offline"
