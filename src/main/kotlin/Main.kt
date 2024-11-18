@@ -67,6 +67,8 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
         )
     }
 
+    //Override
+
     override fun turnOff() {
         super.turnOff()
         println("$name turned off")
