@@ -1,3 +1,4 @@
+//Created An Open Class To manage all Smart Devices
 open class SmartDevice(val name: String, val category: String) {
     var deviceStatus = "online"
     open val deviceType = "unknown"
