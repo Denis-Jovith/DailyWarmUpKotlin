@@ -29,6 +29,7 @@ open class SmartDevice(val name: String, val category: String) {
             field = value
         }
 
+
     open fun turnOn() {
         deviceStatus = "on"
     }
@@ -46,12 +47,15 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
 
 
 
-    private var channelNumber = 1
-        set(value) {
-            if (value in 0..200) {
-                field = value
-            }
-        }
+//    private var channelNumber = 1
+//        set(value) {
+//            if (value in 0..200) {
+//                field = value
+//            }
+//        }
+
+    private var channelNumber by RangeRegulator(initialValue = 1, minValue = 0, maxValue = 200)
+
 
     fun increasedSpeakerVolume() {
         speakerVolume++
@@ -83,13 +87,15 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceName) {
 
     override val deviceType = "Smart Light"
-    var brightnessLevel = 0
-        set(value) {
-            if (value in 0..100) {
-                field = value
-            }
-        }
-    //function to increaseBrightness
+//    var brightnessLevel = 0
+//        set(value) {
+//            if (value in 0..100) {
+//                field = value
+//            }
+//        }
+
+    var brightnessLevel by RangeRegulator(initialValue = 0, minValue = 0, maxValue = 100)
+
 
     fun increaseBrightness() {
         brightnessLevel++
