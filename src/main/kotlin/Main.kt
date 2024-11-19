@@ -75,6 +75,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     }
 }
 
+//inheritance
 class SmartLightDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceName) {
 
@@ -85,6 +86,7 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
                 field = value
             }
         }
+    //function to increaseBrightness
 
     fun increaseBrightness() {
         brightnessLevel++
