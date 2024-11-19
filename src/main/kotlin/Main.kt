@@ -1,3 +1,6 @@
+import kotlin.properties.ReadWriteProperty
+import kotlin.reflect.KProperty
+
 //Created An Open Class To manage all Smart Devices
 open class SmartDevice(val name: String, val category: String) {
     var deviceStatus = "online"
@@ -150,6 +153,22 @@ class SmartHome(
     fun turnOffAllDevices() {
         turnOffTv()
         turnOff()
+    }
+}
+
+class RangeRegulator(
+    initialValue : Int,
+    private val minValue:Int,
+    private val maxValue:Int
+) : ReadWriteProperty<Any?,Int> {
+
+    var fieldData = initialValue
+
+    override fun getValue(thisRef: Any?,property: KProperty<*>): Int {
+
+    }
+    override fun setValue(thisRef:Any?,property:KProperty<*>,value:Int){
+
     }
 }
 
