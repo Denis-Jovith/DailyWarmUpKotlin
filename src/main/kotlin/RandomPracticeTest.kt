@@ -48,6 +48,7 @@
 
 class Mteja{
     var jina = "Kelvin"
+    var address = Address()
 }
 
 class Address{
@@ -78,5 +79,8 @@ fun main() {
 //
 //    v1.vehicleInfo()
 
+    var mteja = Mteja()
+    mteja.address.city = "Dar es Sallam"
+    println("City ${mteja.address.city}")
 
 }
