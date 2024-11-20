@@ -1,5 +1,8 @@
 class Bidhaa{
     var jina = "iphone 14"
+        set(value){
+            field = value
+        }
     var bei = 500000
 }
 
