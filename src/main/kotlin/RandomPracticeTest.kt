@@ -9,23 +9,39 @@
 //        }
 //}
 
-class Bidhaa(var jina: String, var bei: Int) {
-    // Function to display product information
-    fun showProductInfo() {
-        println("Jina: $jina, Bei: Tsh. $bei /=")
-    }
+//class Bidhaa(var jina: String, var bei: Int) {
+//    // Function to display product information
+//    fun showProductInfo() {
+//        println("Jina: $jina, Bei: Tsh. $bei /=")
+//    }
+//}
+
+class Student(
+    val jina:String,
+    val age:Int
+){
+    var isAlumnus = "NO"
+    constructor(jina:String,age:Int,
+        hasGraduated:Boolean):this(jina,age){
+            if(hasGraduated){
+                isAlumnus = "YES"
+            }
+        }
 }
 
 fun main() {
-    // Creating an instance of the Bidhaa class
-    var b1 = Bidhaa(bei = 500, jina = "Sabuni")
+//    // Creating an instance of the Bidhaa class
+//    var b1 = Bidhaa(bei = 500, jina = "Sabuni")
+//
+//    // Changing the 'jina' property
+//    b1.jina = "iphone X"
+//
+//    // Displaying the product information
+//    b1.showProductInfo() // This will call the function within the class
+//
+//    // Printing just the name
+//    println(b1.jina)
 
-    // Changing the 'jina' property
-    b1.jina = "iphone X"
+    var s1 = Student()
 
-    // Displaying the product information
-    b1.showProductInfo() // This will call the function within the class
-
-    // Printing just the name
-    println(b1.jina)
 }
