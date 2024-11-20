@@ -31,8 +31,15 @@
 //        }
 //}
 
-open class Vehicle{
-
+open class Vehicle(
+    var plateNumber: String = "",
+    var year: Int = 0,
+    var fuel: String = "",
+    var color : String = ""
+){
+    fun vehicleInfo(){
+        println("$plateNumber $year $fuel $color $plateNumber")
+    }
 }
 
 class Car: Vehicle(){
@@ -56,4 +63,8 @@ fun main() {
 //    println(s1.isAlumnus)
 //    var s2 = Student("David",27,true)
 //    println(s2.isAlumnus)
+
+    val v1 = Vehicle()
+
+    v1.vehicleInfo()
 }
