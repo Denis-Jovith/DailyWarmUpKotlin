@@ -58,20 +58,33 @@
 //}
 
 open class Animal {
-    fun move(){
+    open fun move(){
         println("Animal is moving")
     }
 }
 
-class Person{
+class Person: Animal(){
+    override fun move(){
+        println("Person is moving using two legs")
+    }
 
 }
-class Snake {
-
+class Snake: Animal() {
+    override fun move(){
+        println("Snake is moving by crawing")
+    }
 }
 
-class Dog{
-
+class Dog: Animal(){
+override fun move(){
+    super.move()
+    println("Dog is moving using four rims")
+}
+}
+class Bird:Animal(){
+override fun move(){
+    println("Bird is moving using wings")
+}
 }
 
 fun main() {
@@ -99,5 +112,15 @@ fun main() {
 //    var mteja = Mteja()
 //    mteja.address.city = "Dar es Sallam"
 //    println("City ${mteja.address.city}")
+
+    val p =Person()
+    val s = Snake()
+    val bird = Bird()
+    val d= Dog()
+
+    p.move()
+    d.move()
+    s.move()
+    bird.move()
 
 }
