@@ -21,8 +21,10 @@ class Student(
     val age:Int
 ){
     var isAlumnus = "NO"
-    constructor(jina:String,age:Int,
-        hasGraduated:Boolean):this(jina,age){
+    constructor(
+        jina:String, age:Int,
+        hasGraduated: Boolean
+    ):this(jina,age){
             if(hasGraduated){
                 isAlumnus = "YES"
             }
@@ -42,6 +44,8 @@ fun main() {
 //    // Printing just the name
 //    println(b1.jina)
 
-    var s1 = Student()
-
+    var s1 = Student("Denis Jovitus Buberwa",21)
+    println(s1.isAlumnus)
+    var s2 = Student("David",27,true)
+    println(s2.isAlumnus)
 }
