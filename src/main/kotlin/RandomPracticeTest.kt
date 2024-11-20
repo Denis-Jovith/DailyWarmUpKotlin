@@ -30,20 +30,30 @@
 //            }
 //        }
 //}
+//
+//open class Vehicle(
+//    var plateNumber: String = "",
+//    var year: Int = 0,
+//    var fuel: String = "",
+//    var color : String = ""
+//){
+//    fun vehicleInfo(){
+//        println("$plateNumber $year $fuel $color $plateNumber")
+//    }
+//}
+//
+//class Car: Vehicle(){
+//
+//}
 
-open class Vehicle(
-    var plateNumber: String = "",
-    var year: Int = 0,
-    var fuel: String = "",
-    var color : String = ""
-){
-    fun vehicleInfo(){
-        println("$plateNumber $year $fuel $color $plateNumber")
-    }
+class Mteja{
+    var jina = "Kelvin"
 }
 
-class Car: Vehicle(){
-
+class Address{
+    var houseNo = "IK/101"
+    var street = "Ikuti"
+    var city = "Mbeya"
 }
 
 fun main() {
@@ -64,7 +74,9 @@ fun main() {
 //    var s2 = Student("David",27,true)
 //    println(s2.isAlumnus)
 
-    val v1 = Vehicle()
+//    val v1 = Vehicle()
+//
+//    v1.vehicleInfo()
 
-    v1.vehicleInfo()
+
 }
