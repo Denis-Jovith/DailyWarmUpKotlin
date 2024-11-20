@@ -3,10 +3,13 @@ class Bidhaa{
         set(value){
             field = value.uppercase()
         }
-    var bei = "500000"
+     var bei = "500000"
         get(){
             return "Tsh. $field /="
         }
+}
+fun showProductInfo(){
+
 }
 
 fun main(){
