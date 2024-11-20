@@ -58,12 +58,14 @@
 //}
 
 open class Animal {
+    open var species = ""
     open fun move(){
         println("Animal is moving")
     }
 }
 
 class Person: Animal(){
+    override var species = "Man"
     override fun move(){
         println("Person is moving using two legs")
     }
@@ -122,5 +124,6 @@ fun main() {
     d.move()
     s.move()
     bird.move()
+    p.species
 
 }
