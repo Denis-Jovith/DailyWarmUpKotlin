@@ -1,7 +1,7 @@
 class Bidhaa{
     var jina = "iphone 14"
         set(value){
-            field = value
+            field = value.uppercase()
         }
     var bei = 500000
 }
