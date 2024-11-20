@@ -46,15 +46,32 @@
 //
 //}
 
-class Mteja{
-    var jina = "Kelvin"
-    var address = Address()
+//class Mteja{
+//    var jina = "Kelvin"
+//    var address = Address()
+//}
+//
+//class Address{
+//    var houseNo = "IK/101"
+//    var street = "Ikuti"
+//    var city = "Mbeya"
+//}
+
+open class Animal {
+    fun move(){
+        println("Animal is moving")
+    }
 }
 
-class Address{
-    var houseNo = "IK/101"
-    var street = "Ikuti"
-    var city = "Mbeya"
+class Person{
+
+}
+class Snake {
+
+}
+
+class Dog{
+
 }
 
 fun main() {
@@ -79,8 +96,8 @@ fun main() {
 //
 //    v1.vehicleInfo()
 
-    var mteja = Mteja()
-    mteja.address.city = "Dar es Sallam"
-    println("City ${mteja.address.city}")
+//    var mteja = Mteja()
+//    mteja.address.city = "Dar es Sallam"
+//    println("City ${mteja.address.city}")
 
 }
