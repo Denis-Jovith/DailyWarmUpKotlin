@@ -124,6 +124,7 @@ fun main() {
     d.move()
     s.move()
     bird.move()
-    p.species
+
+    println("${p.species}")
 
 }
