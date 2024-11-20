@@ -5,7 +5,7 @@ class Bidhaa{
         }
     var bei = "500000"
         get(){
-            return "Tsh. $field"
+            return "Tsh. $field /="
         }
 }
 
