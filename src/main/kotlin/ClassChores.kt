@@ -21,6 +21,7 @@ class RateCalculator(
     private val r: Int,
     private val y: Int
 ) {
+
     //p*r*t/100
     fun multiply(): Int {
         return p * r * y
