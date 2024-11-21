@@ -16,21 +16,25 @@
 //}
 //
 
-class Rate(val p:Int,val r:Int,val y:Int){
+class RateCalculator(
+    private val p: Int,
+    private val r: Int,
+    private val y: Int
+) {
     //p*r*t/100
-    fun multiply():Int{
-        return p*r*y
+    fun multiply(): Int {
+        return p * r * y
     }
 
-    fun showRate(){
-        println("The rate is ${multiply()/100}")
+    fun showRate() {
+        println("The rate is ${multiply() / 100}")
     }
 }
 
-fun main(){
+fun main() {
 //    val anakonda = Snakei("Anakonda")
 //    anakonda.anotherMove()
 
-    var r = Rate(5000,3,5)
-    r.showRate()
+    var rateCalculator = RateCalculator(5000, 3, 5)
+    rateCalculator.showRate()
 }
