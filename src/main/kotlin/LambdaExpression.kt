@@ -1,9 +1,10 @@
 fun main(){
-   val salamu = salamuYaAsubuhi
-    salamu()
-    salamuYaAsubuhi()
+   val salamu = salamu
+    salamu("asubuhi","Captain-D")
+    salamu("mchana","captain-d")
 }
 
- val salamuYaAsubuhi= {
-    println("Habari za asubuhi ndugu zangu")
+ val salamu:(String,String) -> Unit= {
+     majira,jina ->
+    println("Habari za asubuhi ndugu zangu $majira $jina")
 }
