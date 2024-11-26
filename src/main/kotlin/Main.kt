@@ -17,6 +17,8 @@ open class SmartDevice(val name: String, val category: String) {
         }
 
     }
+    //device status
+    
 
     var deviceStatusi="online"
         protected set(value) {
