@@ -69,6 +69,8 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
         println("Channel number increased to $channelNumber")
     }
 
+
+     //ovveride
     override fun turnOn() {
         super.turnOn()
         println(
