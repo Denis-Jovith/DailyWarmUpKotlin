@@ -1,14 +1,16 @@
-public fun main(){
+fun main(){
     val morningNotification = 51
-    val eveningNotification = 135
-    val numberOfMessages = morningNotification+eveningNotification
+    val everningNotification = 135
 
-    val majina = arrayListOf("how","jd")
-
-
-//    println(printNotificationSummary(numberOfMessages))
+    printNotificationSummary(morningNotification)
+    printNotificationSummary(everningNotification)
 }
 
-fun printNotificationSummary(numberOfMessages:Int,morningNotification:Int): String {
-    return "You have  51 notification\n"+ "Your phone is blowing up! You have 99+ notification"
+fun printNotificationSummary(numberOfMessages:Int) {
+    if(numberOfMessages < 100){
+        println("You have $numberOfMessages notifications.")
+    }
+    else{
+        println("Your phone is blowing up! You have 99+ notification")
+    }
 }
