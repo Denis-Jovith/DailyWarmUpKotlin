@@ -6,39 +6,26 @@ fun main(){
 
 }
 
-fun ticketPrice(age:Int,isMonday:Boolean) {
+fun ticketPrice(age:Int,isMonday:Boolean) : String {
     val priceChild = 15
     val priceGrownUpStandard = 30
     val priceGrownUpMonday = 25
     val priceSenior = 20
-     return when(isMonday == false){
-         true -> if (age>=1 && age<=12){
-        println("The movie ticket price for a person aged $age is $priceChild ")
+     return if(age<1 || age >100){
+         "Check the age,it should not be a negatice number or above 100"
      }
-         else if (age>=13 && age <= 60){
-             println("The movie ticket price for a person aged  $age is $priceGrownUpStandard")
-         }
-         else if (age>= 61 && age <=100){
-             println("The movie ticket price for a person aged $age is $priceSenior")
-         }
-         else {
-             if (age>=1 && age<=12){
-                 println("The movie ticket price for a person aged $age is $priceChild ")
-             }
-             else if (age>=13 && age <= 60){
-                 println("The movie ticket price for a person aged  $age is $priceGrownUpMonday")
-             }
-             else if (age>= 61 && age <=100){
-                 println("The movie ticket price for a person aged $age is $priceSenior")
-             }
-             else {
-                 println("Check the age it should not be a negative number or above 100")
-             }
-         }
-
-         else -> {
-             println("Check the age it should not be a negative number or above 100")
-
+     else if (age in 1..12){
+         "The movie ticket price for a person aged $age is $priceChild"
+     }
+     else if (age in 13..60) {
+         if (isMonday){
+             "The movie ticket for a person aged $age is $priceGrownUpMonday"
+         } else {
+             "The movie ticket for a person aged $age is $priceGrownUpStandard"
          }
      }
+     else{
+         "The movie ticket price for a person aged $age is $priceSenior"
+     }
+
 }
