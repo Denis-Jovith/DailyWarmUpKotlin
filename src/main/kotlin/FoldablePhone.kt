@@ -1,4 +1,5 @@
- fun main(){
+//JUST REVIEWING MY COCDE
+fun main(){
     val foldablePhone = FoldablePhone()
     foldablePhone.checkPhoneScreenLight()
 
