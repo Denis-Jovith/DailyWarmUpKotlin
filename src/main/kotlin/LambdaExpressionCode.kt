@@ -12,6 +12,8 @@ class RangeRegurator(
         return fieldData
     }
 
+    //Reviewing the code
+
     override fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {
         if(value in minValue..maxValue){
             fieldData = value
