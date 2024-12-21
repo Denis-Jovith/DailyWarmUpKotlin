@@ -1,8 +1,8 @@
 fun main(){
-   val haujambo = :: habari
+   val haujambo = :: habarii
     haujambo()
 }
 
-fun habari(){
+fun habarii(){
     println("Habari za asubuhi!")
 }
