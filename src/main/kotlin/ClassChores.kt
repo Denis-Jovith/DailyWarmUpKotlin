@@ -15,7 +15,7 @@
 //
 //}
 //
-
+//merry christmas
 class RateCalculator(
     private val p: Int,
     private val r: Int,
