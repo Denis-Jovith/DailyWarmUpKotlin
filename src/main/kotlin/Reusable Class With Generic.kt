@@ -30,6 +30,29 @@ class Quiz : ProgressPrintable {
         println()
         println(progressText)
     }
+
+    fun printQuizz(){
+       question4.let{
+           println(it.questionText)
+           println(it.answer)
+           println(it.difficulty)
+       }
+        println()
+        question5.let{
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question6.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+    }
+
+
     val question4 = Question<String>("Quoth the raven ___","nevermore",Difficulty.MEDIUM)
     val question5 = Question<Boolean>("The sky is green. True or False",false,Difficulty.EASY)
     val question6 = Question<Int>("How many days are there between full moons?",28,Difficulty.HARD)
@@ -39,6 +62,8 @@ class Quiz : ProgressPrintable {
         var jumla : Int = 10
         var answered: Int = 3
     }
+
+
 
 }
 
@@ -70,4 +95,16 @@ fun main(){
 
 //    Quiz.printProgressBar()
     Quiz().printProgressBar()
+
+    println()
+
+//    val quiz = Quiz()
+//
+//    quiz.printQuizz()
+
+    Quiz().apply {
+        printQuizz()
+    }
+
+
 }
