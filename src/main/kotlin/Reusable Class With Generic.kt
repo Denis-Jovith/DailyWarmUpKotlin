@@ -27,6 +27,19 @@ class Quiz {
 
 }
 
+val Quiz.StudentProgressOg.progressText:String
+    get() = "${answered} of ${jumla} answered "
+
+
+fun Quiz.StudentProgressOg.printProgressBar() {
+    repeat(Quiz.answered){ print("▓") }
+    repeat(Quiz.jumla - Quiz.answered){ print("▓") }
+    println()
+    println(Quiz.progressText)
+}
+
+
+
 fun main(){
     val question1 = Question<String>("Quoth the raven ___","nevermore",Difficulty.MEDIUM)
     val question2 = Question<Boolean>("The sky is green. True or False",false,Difficulty.EASY)
@@ -34,10 +47,11 @@ fun main(){
 
 
 
-    fun main() {
         println("${Quiz.answered} of ${Quiz.jumla} answered.")
-    }
+
     println("${StudentProgress.answer} of ${StudentProgress.total} answered")
 
     println(question1.toString())
+
+    Quiz.printProgressBar()
 }
