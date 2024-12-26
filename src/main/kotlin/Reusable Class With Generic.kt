@@ -14,7 +14,22 @@ object StudentProgress{
 
 }
 
-class Quiz {
+interface ProgressPrintable{
+    val progressText :String
+    fun  printProgressBar()
+}
+
+class Quiz : ProgressPrintable {
+
+    override val progressText: String
+        get() = "${answered} of ${jumla} answered"
+
+    override fun printProgressBar() {
+        repeat(Quiz.answered){ print("▓") }
+        repeat(Quiz.jumla - Quiz.answered){ print("▓") }
+        println()
+        println(progressText)
+    }
     val question4 = Question<String>("Quoth the raven ___","nevermore",Difficulty.MEDIUM)
     val question5 = Question<Boolean>("The sky is green. True or False",false,Difficulty.EASY)
     val question6 = Question<Int>("How many days are there between full moons?",28,Difficulty.HARD)
@@ -27,16 +42,16 @@ class Quiz {
 
 }
 
-val Quiz.StudentProgressOg.progressText:String
-    get() = "${answered} of ${jumla} answered "
+//val Quiz.StudentProgressOg.progressText:String
+//    get() = "${answered} of ${jumla} answered "
 
 
-fun Quiz.StudentProgressOg.printProgressBar() {
-    repeat(Quiz.answered){ print("▓") }
-    repeat(Quiz.jumla - Quiz.answered){ print("▓") }
-    println()
-    println(Quiz.progressText)
-}
+//fun Quiz.StudentProgressOg.printProgressBar() {
+//    repeat(Quiz.answered){ print("▓") }
+//    repeat(Quiz.jumla - Quiz.answered){ print("▓") }
+//    println()
+////    println(Quiz.progressText)
+//}
 
 
 
@@ -53,5 +68,6 @@ fun main(){
 
     println(question1.toString())
 
-    Quiz.printProgressBar()
+//    Quiz.printProgressBar()
+    Quiz().printProgressBar()
 }
